@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Result</title>
+     <link rel="stylesheet" type="text/css" href="static/style.css">
+     <style>
+         .price{
+             text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+             font-size: 18px;
+         }
+         .bottom_back {
+             background-color: #4682B4;
+             border: none;
+             color: white;
+             padding: 7px 99px;
+             text-decoration: none;
+             margin: 3px 10%;
+             cursor: pointer;
+             font-size: 15px;
+         }
+         
+     </style>
+  </head>
+ <body>
+     <h1>Результаты поиска:</h1>
+     <input class="bottom_back" type="button" onclick="history.back();" value="Назад"/>
+        {% for name, dict, score in name %}
+        <table>
+            <tr><td width="200">
+                <p>{{ dict['title'] }}</p>
+                <p class="price"><b>Цена: </b>{{ dict['price'] }}</p>
+                </td>
+                <td class="text_style">
+                    {{ dict['text'] }}
+                </td></tr>
+        </table>
+		{% endfor %}
+ </body>
+</html>

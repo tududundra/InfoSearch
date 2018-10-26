@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+ <head>
+  <meta charset="utf-8">
+  <title>Search</title>
+     <link rel="stylesheet" type="text/css" href="static/style.css">
+     <style>
+         .search_line {
+             background-image: url(static/35251.png);
+         }
+         .bottom {
+             background-color: #4682B4;
+             border: none;
+             color: white;
+             padding: 7px 200px;
+             text-decoration: none;
+             margin: 3px auto;
+             cursor: pointer;
+         }
+         .search_place{
+             font-size: 18px
+         }
+         .field {
+             clear:both; 
+             text-align:right; 
+             line-height:25px;}
+         label {
+             float:left;
+             padding-right:10px;}
+         .main {
+             margin: auto;
+             width: 15%;
+             float:center;}
+         
+     </style>
+ </head>
+ <body>
+ 	<div>
+ 	<form>
+        <h1>Поиск</h1>
+        <div class = "search_line">
+            <input type="text"  name="words" placeholder="Все по телефонам" size="48" class="search_place" required><br>
+                <input type="submit" value="Отправить" class = "bottom">
+        </div>
+        <div>
+            <p><b> Вариантов в выдаче:</b><br>
+                <input name="amount" type="number" min="1" max="100" value="5">
+            </p>
+            <p>
+                <b>Стоп-слова:</b><br>
+                <div class="main">
+                    <div class="field">
+                        <label for="y">Да</label>
+                        <input type="radio" name="stops" value="True" id="y" checked/><br>
+                    </div>
+                    <div class="field">
+                        <label for="n">Нет</label>
+                        <input type="radio" name="stops" id="n" value="False"/><br>
+                    </div>
+                </div>
+            </p>
+        </div>
+        <div>
+            <p>
+                <b>Поисковая модель:</b><br>
+                <div class="main">
+                    <div class="field">
+                        <label for="ii">Inverted index</label>
+                        <input type="radio" name="model" id="ii" value="inverted_index" checked/><br>
+                    </div>
+                    <div class="field">
+                        <label for="w2v">Word2vec</label>
+                        <input type="radio" name="model" id="w2v" value="word2vec"/><br>
+                    </div>
+                    <div class="field">
+                        <label for="d2v">Doc2vec</label>
+                        <input type="radio" name="model" id="d2v" value="doc2vec"/><br>
+                    </div>
+                </div>
+             </p>
+        </div>
+ 	</form>
+	</div>
+ </body>
+</html>
